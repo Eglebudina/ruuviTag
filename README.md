@@ -13,7 +13,7 @@ You will also need some java and mvn packages installed in your Raspberry pi. He
 ////////////////////////////////
 InfluxDB
 ////////////////////////////////
-Set up InfluxDB database, which is good for time series data and storing RuuviTag data. Influx data provides .deb builds for armhf. 
+Set up InfluxDB database, which is an open-source distributed time series database with no external dependencies. InfluxDB is a scalable datastore for metrics, events, and real-time analytics and perfect for storing RuuviTag data. Influx data provides .deb builds for armhf. 
 
 1. Run this command to install (source here https://portal.influxdata.com/downloads/):
 wget https://dl.influxdata.com/influxdb/releases/influxdb-1.8.10_linux_armhf.tar.gz
@@ -41,6 +41,9 @@ influx
 
 9.  Create a database for ruuvi measurements with command: CREATE DATABASE ruuvi.
 
+10. Here is a basic format of an InfluxDB data point: 
+<measurement>[,<tag-key>=<tag-value>...] <field-key>=<field-value>[,<field2-key>=<field2-value>...] [unix-nano-timestamp]
+
 ////////////////////////////////////////
 Grafana
 ////////////////////////////////////////
@@ -64,8 +67,6 @@ Setup the connection to InfluxDB with “set up datasource” option. Settings:
 4. Access: proxy
 5. Auth: blank
 6. Database: ruuvi
-7. Here is a basic format of an InfluxDB data point: 
-<measurement>[,<tag-key>=<tag-value>...] <field-key>=<field-value>[,<field2-key>=<field2-value>...] [unix-nano-timestamp]
 
 /////////////////////////////////////////////////
 RuuviCollector
