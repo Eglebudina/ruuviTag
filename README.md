@@ -5,7 +5,7 @@ Raspberry pi and RuuviTag project. Some knowledge in Linux and Java is necessary
 
 RuuviTags are not set up with internet connectivity, therefore using Raspberry Pi is a perfect gateway. Raspberry Pi 3 has inbuilt BLE and WiFi and enough of processing power.
 
-Once you log in, update the Pi by running sudo apt-get update and sudo apt-get upgrade and sudo apt-geet upgrade. 
+Once you log in, update the Pi by running sudo apt-get update and sudo apt-get upgrade. 
 
 Configuring the Raspberry Pi as a WiFi hotspot provides wireless connection to the Raspberry Pi without need to set up Ethernet connection. Configure your raspberry pi WiFi connection by running sudo raspi-config.
 You will also need some java and mvn packages installed in your Raspberry pi. Here is a good link to follow for installing mvn https://xianic.net/2015/02/21/installing-maven-on-the-raspberry-pi/
