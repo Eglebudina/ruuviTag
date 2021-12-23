@@ -2,6 +2,8 @@
 Raspberry pi and RuuviTag project. Some knowledge in Linux and Java is necessary for fully understanding how to use this application.
 
 – updated 22–12–2021
+Youtube video: https://youtu.be/xqXQSRmGkZ4
+Dashboaard snapshot: https://snapshot.raintank.io/dashboard/snapshot/IGCVcRAz35fop0uUR17jT96zsJ7O5N2C?orgId=2
 
 RuuviTags are not set up with internet connectivity, therefore using Raspberry Pi is a perfect gateway. Raspberry Pi 3 has inbuilt BLE and WiFi and enough of processing power.
 
