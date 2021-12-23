@@ -61,9 +61,9 @@ sudo /bin/systemctl daemon-reload
 sudo /bin/systemctl enable grafana-server
 sudo /bin/systemctl start grafana-server
 sudo /bin/systemctl status grafana-server
-If everything has been properly set up, we can now browse over to raspberrypi.local:3000 and see web-ui of grafana. Default user and password is admin/admin. We change the password to ruuviberry on change password prompt.
 
-Grafana login
+If everything has been properly set up, we can now browse over to raspberrypi.local:3000 and see web-ui of grafana. Default user and password is admin/admin. (I have changed password for my own use)
+
 Grafana login
 Setup the connection to InfluxDB with “set up datasource” option. Settings:
 
@@ -73,8 +73,6 @@ URL: http://localhost:8086
 Access: proxy
 Auth: blank
 Database: ruuvi
-Success image
-Save and test, you should see a success image
 
 /////////////////////////////////////////////////
 RuuviCollector
@@ -97,3 +95,8 @@ Template for dashboard
 /////////////////////////////////////////////
 Browse back to raspberrypi.local:3000, create your first dashboard and add a panel. 
 Add the template in the repo grafanaTemplate.json for displaying the dashboard in raspberrypi.local:3000.
+
+//////////////////////////////////////////////
+Cronjob to run java application
+/////////////////////////////////////////////
+I've created a simple script so application can run continuously every 2hours as a cron job. See repo cronJobScript.sh
