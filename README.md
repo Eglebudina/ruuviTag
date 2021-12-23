@@ -5,9 +5,10 @@ Raspberry pi and RuuviTag project. Some knowledge in Linux and Java is necessary
 
 RuuviTags are not set up with internet connectivity, therefore using Raspberry Pi is a perfect gateway. Raspberry Pi 3 has inbuilt BLE and WiFi and enough of processing power.
 
-Once you log in, update the Pi by running sudo apt-get update and sudo apt-get upgrade and sudo apt-geet upgrade.
+Once you log in, update the Pi by running sudo apt-get update and sudo apt-get upgrade and sudo apt-geet upgrade. 
 
 Configuring the Raspberry Pi as a WiFi hotspot provides wireless connection to the Raspberry Pi without need to set up Ethernet connection. Configure your raspberry pi WiFi connection by running sudo raspi-config.
+You will also need some java and mvn packages installed in your Raspberry pi. Here is a good link to follow for installing mvn https://xianic.net/2015/02/21/installing-maven-on-the-raspberry-pi/
 
 ////////////////////////////////
 InfluxDB
@@ -78,7 +79,8 @@ In my case, these commands are required to download dependencies and setup permi
 3. sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
 4. sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcidump`
 5. You may need to troubleshoot if there are more dependencies missing, but if everything is set up correctly go to RuuviCollector java program and change parameter position (in RuuviCollector/targets) to suit ruuvi tag mac addresses. In my case, I've uploaded the changes in this repo: ruuvi-collector.properties and ruuvi-names.properties
-6. Test the RuuviCollector by running: java -jar ruuvi-collector-0.2.jar. 
+6. Execute by running: mvn clean package
+7. Test the RuuviCollector by running: java -jar ruuvi-collector-0.2.jar 
 
 //////////////////////////////////////////////
 Template for dashboard
