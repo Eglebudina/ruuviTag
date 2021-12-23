@@ -57,10 +57,10 @@ Grafana is used to create dashboard and run some simple analytics on data. Downl
 
 Enable grafana with
 
-sudo /bin/systemctl daemon-reload
-sudo /bin/systemctl enable grafana-server
-sudo /bin/systemctl start grafana-server
-sudo /bin/systemctl status grafana-server
+1. sudo /bin/systemctl daemon-reload
+2. sudo /bin/systemctl enable grafana-server
+3. sudo /bin/systemctl start grafana-server
+4. sudo /bin/systemctl status grafana-server
 
 If everything has been properly set up, we can now browse over to raspberrypi.local:3000 and see web-ui of grafana. Default user and password is admin/admin. (I have changed password for my own use)
 
