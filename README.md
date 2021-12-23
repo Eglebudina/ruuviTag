@@ -21,6 +21,7 @@ Configuring the Raspberry Pi as a WiFi hotspot provides wireless connection to t
 
 ////////////////////////////////
 InfluxDB
+////////////////////////////////
 Set up InfluxDB database, which is good for time series data and storing RuuviTag data. Influx data provides .deb builds for armhf. 
 
 1. Run this command to install (source here https://portal.influxdata.com/downloads/):
@@ -51,6 +52,7 @@ influx
 
 ////////////////////////////////////////
 Grafana
+////////////////////////////////////////
 Grafana is used to create dashboard and run some simple analytics on data. Download latest grafana binaries for Raspberry Pi from Grafana official distribution. Raspberry Pi 3, 3B+ and 4 use ARMv7.
 
 Enable grafana with
@@ -76,7 +78,10 @@ Save and test, you should see a success image
 
 /////////////////////////////////////////////////
 RuuviCollector
+/////////////////////////////////////////////////
 RuuviCollector is a Java program which listens to HCIDump and parses RuuviTag data. It also provides some analytics, such as dew point based on humidity and temperature. Follow the instructions on github repository to install the RuuviCollector. Ruuvitag-sensor python library has some additional instructions on setting up the permissions of Bluetooth adapter of Raspberry Pi.
+https://github.com/Scrin/RuuviCollector.git
+https://github.com/ttu/ruuvitag-sensor.git
 
 In my case, these commands are required to download dependencies and setup permissions:
 
@@ -85,4 +90,10 @@ sudo apt install bluez bluez-hcidump
 sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
 sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcidump`
 You can test the RuuviCollector by running
-java -jar ruuvi-collector-0.2.jar. Browse back to raspberrypi.local:3000, create your first dashboard and add a panel. Add settings for displaying the temperature:
+java -jar ruuvi-collector-0.2.jar. 
+
+//////////////////////////////////////////////
+Template for dashboard
+/////////////////////////////////////////////
+Browse back to raspberrypi.local:3000, create your first dashboard and add a panel. 
+Add the template in the repo grafanaTemplate.json for displaying the dashboard in raspberrypi.local:3000.
