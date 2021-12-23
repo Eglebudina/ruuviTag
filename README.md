@@ -65,7 +65,7 @@ Setup the connection to InfluxDB with “set up datasource” option. Settings:
 5. Auth: blank
 6. Database: ruuvi
 7. Here is a basic format of an InfluxDB data point: 
-<!-- <measurement>[,<tag-key>=<tag-value>...] <field-key>=<field-value>[,<field2-key>=<field2-value>...] [unix-nano-timestamp]" -->
+<measurement>[,<tag-key>=<tag-value>...] <field-key>=<field-value>[,<field2-key>=<field2-value>...] [unix-nano-timestamp]
 
 /////////////////////////////////////////////////
 RuuviCollector
