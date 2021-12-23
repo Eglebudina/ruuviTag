@@ -1,21 +1,11 @@
 # ruuviTag
-raspberry pi and RuuviTag project
+Raspberry pi and RuuviTag project. Some knowledge in Linux and Java is necessary for fully understanding how to use this application.
 
 – updated 22–12–2021
 
 RuuviTags are not set up with internet connectivity, therefore using Raspberry Pi is a perfect gateway. Raspberry Pi 3 has inbuilt BLE and WiFi and enough of processing power.
 
-Our Raspberry Pi image has these components:
-
-Rasbian as the base OS
-WiFi hotspot to allow nearby devices to connect to it.
-RuuviCollector to collect data
-InfluxDB as a database
-Grafana to provide a dashboard to InfluxDB
-Raspberry Pi collecting and displaying data.
-Raspberry Pi collecting and displaying data.
-
-Once you log in, update the Pi by running sudo apt-get update and sudo apt-get upgrade.
+Once you log in, update the Pi by running sudo apt-get update and sudo apt-get upgrade and sudo apt-geet upgrade.
 
 Configuring the Raspberry Pi as a WiFi hotspot provides wireless connection to the Raspberry Pi without need to set up Ethernet connection. Configure your raspberry pi WiFi connection by running sudo raspi-config.
 
@@ -73,7 +63,7 @@ Setup the connection to InfluxDB with “set up datasource” option. Settings:
 4. Access: proxy
 5. Auth: blank
 6. Database: ruuvi
-
+7. 
 /////////////////////////////////////////////////
 RuuviCollector
 /////////////////////////////////////////////////
@@ -83,12 +73,12 @@ https://github.com/ttu/ruuvitag-sensor.git
 
 In my case, these commands are required to download dependencies and setup permissions:
 
-sudo apt install openjdk-11-jdk
-sudo apt install bluez bluez-hcidump
-sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
-sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcidump`
-You can test the RuuviCollector by running
-java -jar ruuvi-collector-0.2.jar. 
+1. sudo apt install openjdk-11-jdk
+2. udo apt install bluez bluez-hcidump
+3. sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
+4. sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcidump`
+5. You may need to troubleshoot if there are more dependencies missing, but if everything is set up correctly go to RuuviCollector java program and change parameter position (in RuuviCollector/targets) to suit ruuvi tag mac addresses. In my case, I've uploaded the changes in this repo: ruuvi-collector.properties and ruuvi-names.properties
+6. Test the RuuviCollector by running: java -jar ruuvi-collector-0.2.jar. 
 
 //////////////////////////////////////////////
 Template for dashboard
