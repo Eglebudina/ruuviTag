@@ -64,13 +64,14 @@ Setup the connection to InfluxDB with “set up datasource” option. Settings:
 4. Access: proxy
 5. Auth: blank
 6. Database: ruuvi
-7. 
+7. Here is a basic format of an InfluxDB data point: <measurement>[,<tag-key>=<tag-value>...] <field-key>=<field-value>[,<field2-key>=<field2-value>...] [unix-nano-timestamp]
+
 /////////////////////////////////////////////////
 RuuviCollector
 /////////////////////////////////////////////////
 RuuviCollector is a Java program which listens to HCIDump and parses RuuviTag data. It also provides some analytics, such as dew point based on humidity and temperature. Follow the instructions on github repository to install the RuuviCollector. Ruuvitag-sensor python library has some additional instructions on setting up the permissions of Bluetooth adapter of Raspberry Pi.
-https://github.com/Scrin/RuuviCollector.git
-https://github.com/ttu/ruuvitag-sensor.git
+1. https://github.com/Scrin/RuuviCollector.git
+2. https://github.com/ttu/ruuvitag-sensor.git
 
 In my case, these commands are required to download dependencies and setup permissions:
 
