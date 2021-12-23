@@ -67,12 +67,12 @@ If everything has been properly set up, we can now browse over to raspberrypi.lo
 Grafana login
 Setup the connection to InfluxDB with “set up datasource” option. Settings:
 
-Name: Ruuvi
-Type: InfluxDB 
-URL: http://localhost:8086
-Access: proxy
-Auth: blank
-Database: ruuvi
+1. Name: Ruuvi
+2. Type: InfluxDB 
+3. URL: http://localhost:8086
+4. Access: proxy
+5. Auth: blank
+6. Database: ruuvi
 
 /////////////////////////////////////////////////
 RuuviCollector
